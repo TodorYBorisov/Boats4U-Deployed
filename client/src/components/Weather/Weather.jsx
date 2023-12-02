@@ -14,12 +14,11 @@ export default function Weather() {
         wind_dir: 'SW'
     };
 
-
     const [searchValue, setSearchValue] = useState(initialValue);
     const [weather, setWeather] = useState(initialWeatherData);
     const [errors, setErrors] = useState({});
 
-    console.log(weather);
+    //console.log(weather);
     const onChange = (event) => {
         setSearchValue(state => ({ ...state, [event.target.name]: event.target.value, }));
     };
@@ -53,7 +52,6 @@ export default function Weather() {
             .catch(error => setErrors(error));
     };
 
-
     const inputValidator = () => {
         if (searchValue.search.length < 1) {
             setErrors(state => ({ ...state, search: 'The search field cannot be empty!' }));
@@ -63,7 +61,6 @@ export default function Weather() {
             }
         }
     };
-
 
     return (
         <div className={styles['wrapper']}>
@@ -96,9 +93,9 @@ export default function Weather() {
                         <div className={styles['weather-data']}>
                             <div className={styles['location']}>{weather.location}</div>
                             <div className={styles['temperature']}>{weather.temp_c}°C</div>
-                            <div className={styles['weather-image']}>
+                            {/* <div className={styles['weather-image']}>
                                 <img src={'/assets/humidity.png'} alt="" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className={styles['lower-data']}>
