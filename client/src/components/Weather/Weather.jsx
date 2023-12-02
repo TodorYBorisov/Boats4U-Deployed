@@ -7,18 +7,19 @@ export default function Weather() {
     const initialValue = { search: '' };
     const initialWeatherData = {
         location: 'Sofia',
-        temp_c: '2',
-        humidity: '75',
-        wind_kph: '6',
+        temp_c: '12',
+        humidity: '45',
+        wind_kph: '4',
         uv: '1',
-        wind_dir: 'SW'
+        wind_dir: 'SW',
+        maxtemp_c: '15',
+        mintemp_c: '3'
     };
 
     const [searchValue, setSearchValue] = useState(initialValue);
     const [weather, setWeather] = useState(initialWeatherData);
     const [errors, setErrors] = useState({});
 
-    //console.log(weather);
     const onChange = (event) => {
         setSearchValue(state => ({ ...state, [event.target.name]: event.target.value, }));
     };
@@ -29,24 +30,26 @@ export default function Weather() {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '0b1bd47e78msh9150619d0919e26p16e710jsn870f6abef60a',
+                'X-RapidAPI-Key': 'f60445cb40msh77944e9ff293c8ep188e37jsn85a4fdfafadc',
                 'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
             }
         };
 
-        fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${searchValue.search}&days=3`, options)
+        fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${searchValue.search}&days=3`, options)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 const updatedWeatherData = {
                     location: data.location.name,
                     temp_c: Math.round(Number(data.current.temp_c)),
-                    humidity:Math.round(Number(data.current.humidity)),
                     wind_kph:Math.round(Number(data.current.wind_kph)),
+                    wind_dir: data.current.wind_dir,
+                    humidity: Math.round(Number(data.current.humidity)),
                     uv: data.current.uv,
-                    wind_dir: data.current.wind_dir
+                    maxtemp_c: Math.round(Number(data.forecast.forecastday[0].day.maxtemp_c)),
+                    mintemp_c: Math.round(Number(data.forecast.forecastday[0].day.mintemp_c)),
                 };
                 
-
                 setWeather(updatedWeatherData);
             })
             .catch(error => setErrors(error));
@@ -93,9 +96,6 @@ export default function Weather() {
                         <div className={styles['weather-data']}>
                             <div className={styles['location']}>{weather.location}</div>
                             <div className={styles['temperature']}>{weather.temp_c}°C</div>
-                            {/* <div className={styles['weather-image']}>
-                                <img src={'/assets/humidity.png'} alt="" />
-                            </div> */}
                         </div>
                     </div>
                     <div className={styles['lower-data']}>
@@ -104,15 +104,26 @@ export default function Weather() {
                         </div>
 
                         <div className={styles['more-info-container']}>
-                            {/* <div className={styles['info-block']}>
+                            <div className={styles['info-block']}>
                                 <div className={styles['info-block-lable']}>
                                     <img src="/assets/low-temperature.png" />
                                     <span>Min</span>
                                 </div>
                                 <div className={styles['info-block-value']}>
-                                    {-2}°C
+                                    {weather.mintemp_c}°C
                                 </div>
-                            </div> */}
+                            </div>
+
+                            <div className={styles['info-block']}>
+                                <div className={styles['info-block-lable']}>
+                                    <img src="/assets/high-temperature.png" />
+                                    <span>Max</span>
+                                </div>
+                                <div className={styles['info-block-value']}>
+                                    {weather.maxtemp_c}°C
+                                </div>
+                            </div>
+
                             <div className={styles['info-block']}>
                                 <div className={styles['info-block-lable']}>
                                     <img src="/assets/uv.png" />
@@ -122,19 +133,10 @@ export default function Weather() {
                                     {weather.uv}
                                 </div>
                             </div>
-                            {/* <div className={styles['info-block']}>
-                                <div className={styles['info-block-lable']}>
-                                    <img src="/assets/high-temperature.png" />
-                                    <span>Max</span>
-                                </div>
-                                <div className={styles['info-block-value']}>
-                                    {+2}°C
-                                </div>
-                            </div> */}
 
                             <div className={styles['info-block']}>
                                 <div className={styles['info-block-lable']}>
-                                    <img src="/assets/compas1.png" />
+                                    <img src="/assets/compas.png" />
                                     <span>Wind direction</span>
                                 </div>
                                 <div className={styles['info-block-value']}>
@@ -168,4 +170,4 @@ export default function Weather() {
         </div>
     );
 }
-
+//alt +° 0176 за градуси
