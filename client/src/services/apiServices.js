@@ -1,7 +1,8 @@
 import { getUserData, clearUserData } from '../utils/util';
 
-const host = 'http://localhost:3030';
-  
+// const host = 'http://localhost:3030';
+const host = 'https://server-boat4u.onrender.com';
+
 // функцията която ще ни прави заявките
 async function request(method, url, data) {
 
