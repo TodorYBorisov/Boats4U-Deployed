@@ -27,15 +27,16 @@ Supported requests are GET, POST, PUT, PATCH, DELETE.
 - Register
     - Create a new user by sending a POST request to /users/register with properties username, email, phone number, gender, password and repeat password. The service automatically creates a session and returns an authorization token, that can be used for requests.
     - server responce:
+
         {
-        "username": "test",
-        "email": "test@abv.bg",
-        "phone": "+359888500839",
-        "gender": "male",
-        "password": "123456",
-        "_createdOn": 1701691448508,
-        "_id": "82bf7fcd-a8f1-45d9-a285-5b8fdb922856",
-        "accessToken": "17b0942928194891df618dcb0193bc03a09de5012aa4cfc119ee5bb013ba553b"
+            "username": "test",
+            "email": "test@abv.bg",
+            "phone": "+359888500839",
+            "gender": "male",
+            "password": "123456",
+            "_createdOn": 1701691448508,
+            "_id": "82bf7fcd-a8f1-45d9-a285-5b8fdb922856",
+            "accessToken": "17b0942928194891df618dcb0193bc03a09de5012aa4cfc119ee5bb013ba553b"
         }
 - Login
     - Login by sending a POST request with email and password to /users/login. The service will respond with an object, containing a standard string token, that can be used for requests.
