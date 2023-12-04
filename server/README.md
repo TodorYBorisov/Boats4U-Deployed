@@ -70,6 +70,7 @@ Supported requests are GET, POST, PUT, PATCH, DELETE.
     ]
 
     - GET http://localhost:3030/data/boats/:id - entry matching the given ID; will return 404 if collection or entry do not exist with appropriate message attached to response:
+    
         {
             "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
             "startPoint": "Corfu",
