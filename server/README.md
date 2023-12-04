@@ -48,7 +48,7 @@ Supported requests are GET, POST, PUT, PATCH, DELETE.
     - To make an authorized request, add the following header, where {token} is the access token, returned by the service upon successful login or registration: X-Authorization: {token}
 
 - Read
-    An end point is revealed at http://localhost:3030/data, which grants access to information, stored on the service. GET requests to the service will return the following responses:
+    - An end point is revealed at http://localhost:3030/data, which grants access to information, stored on the service. GET requests to the service will return the following responses:
     - GET /data/boats - array of all entries in target collection; will return 404 if collection does not exist
     [
         {
