@@ -1,7 +1,3 @@
-/* body {
-    position: relative;
-} */
-
 .register {
     background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)), url(/assets/background.jpg) no-repeat center center;
     background-size: cover;
@@ -13,11 +9,9 @@ form label {
     gap: 0.5em;
 }
 
-
 .register-box {
     color: white;
     width: 23em;
-    /* height: 43em; */
     margin: auto;
     background-color: rgba(38, 26, 29, 0.6);
     border: 0.2em solid white;
@@ -28,13 +22,7 @@ form label {
 .register-box h1 {
     text-align: center;
     padding-top: 0.3em;
-    /* font-family: 'Handlee', cursive; */
 }
-
-/* .register-box h4 {
-    margin-top: 10px;
-    text-align: center;
-} */
 
 .register-box form {
     width: 18em;
@@ -59,30 +47,17 @@ form label {
     background: rgb(232, 240, 254);
 }
 
-/* .register-box input[type="submit"] {
-    width: 320px;
-    height: 35px;
-    margin-top: 30px;
-    border: none;
-    background-color: rgb(112, 150, 230);
-    color: white;
-    font-size: 15px;
-} */
-
 .register-box .last-p {
     text-align: center;
     padding: 1.5em;
     font-size: 1em;
-
 }
 
 .register-box p>a {
     color: rgb(112, 150, 230);
     text-decoration: none;
-
 }
 
-/* ===================== */
 .register-box form .gender {
     display: flex;
     justify-content: space-between;
@@ -104,11 +79,9 @@ form label {
     margin-right: 5px;
 }
 
-
 form .button-register {
     display: flex;
     padding: 0.7em 0.9em;
-    /* color: rgb(104, 102, 102); */
     color: white;
     font-weight: bold;
     font-size: 1em;
@@ -117,10 +90,8 @@ form .button-register {
     background: rgb(231, 238, 240);
     margin-top: 1em;
     margin-left: 7em;
-    /* border: 2px solid rgb(104, 102, 102); */
     cursor: pointer;
     background-color: rgb(32, 129, 178);
-
 }
 
 .button-register {
@@ -134,5 +105,7 @@ form .button-register {
 form .errorMessage{
     text-align: center;
     color: red;
-    width: 20em;
+    width: 21em;
+    margin-left: -0.5em;
+    margin-bottom: -1em;
 }
