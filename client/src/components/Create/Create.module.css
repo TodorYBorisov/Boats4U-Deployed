@@ -7,7 +7,7 @@
 #offer-trip-page {
     background: url('/assets/map1.jpg') center center no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 
@@ -402,7 +402,7 @@ div.error p {
 } */
 
 .btn {
-    margin-bottom: 10px;
+    margin-bottom: 2em;
 }
 
 button.btn {

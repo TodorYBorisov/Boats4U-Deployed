@@ -226,7 +226,7 @@ textarea {
 @media screen and (max-width: 1280px) {
     .details-title {
         font-size: 3em;
-        padding-top: 1em;
+        padding-top: 1.5em;
     }
 
     .picture-desc img {
@@ -251,7 +251,7 @@ textarea {
     }
 
     .boat-info {
-        width: 75%;
+        width: 77%;
     }
 
     .trip-desc textarea {
