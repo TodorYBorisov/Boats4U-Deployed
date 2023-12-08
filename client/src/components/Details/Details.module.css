@@ -259,14 +259,14 @@ textarea {
         height: 9em;
         font-size: 1em;
     }
+}
 
-    @media screen and (min-width: 1440px){
-        .boat-info h5 {
-            padding-bottom: 0em;
-        }
-    
-        .boat-info {
-            width: 90%;
-        }
+@media screen and (max-width: 1440px){
+    .boat-info h5 {
+        padding-bottom: 0em;
+    }
+
+    .boat-info {
+        width: 90%;
     }
 }
