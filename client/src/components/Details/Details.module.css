@@ -223,16 +223,6 @@ textarea {
     resize: none;
 }
 
-@media screen and (max-width: 1440px){
-    .boat-info h5 {
-        padding-bottom: none;
-    }
-
-    .boat-info {
-        width: 90%;
-    }
-}
-
 @media screen and (max-width: 1280px) {
     .details-title {
         font-size: 3em;
@@ -268,5 +258,15 @@ textarea {
         width: 20em;
         height: 9em;
         font-size: 1em;
+    }
+
+    @media screen and (max-width: 1440px){
+        .boat-info h5 {
+            padding-bottom: none;
+        }
+    
+        .boat-info {
+            width: 90%;
+        }
     }
 }
