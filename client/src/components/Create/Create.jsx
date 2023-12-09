@@ -33,9 +33,11 @@ export default function Create() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        const formData = Object.fromEntries(new FormData(event.target));
+        const trimmedformData = Object.fromEntries(
+            Object.entries(formData).map(([key, value]) => [key, typeof value === 'string' ? value.trim() : value])
+        );
 
-        dataService.createBoat(formData)
+        dataService.createBoat(trimmedformData)
             .then(() => {
                 navigate('/boats');
             })
