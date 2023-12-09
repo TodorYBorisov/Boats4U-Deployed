@@ -41,6 +41,9 @@ export default function Details() {
                 setDetails(data);
             })
             .catch(error => {
+                if(error.code == 404){
+                    navigate('/NotFound');
+                }
                 console.error('Error fetching data:', error);
             });
 
