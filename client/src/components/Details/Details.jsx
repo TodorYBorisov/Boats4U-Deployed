@@ -56,7 +56,7 @@ export default function Details() {
             })
             .catch(error => console.log(error));
 
-    }, [id, auth]);
+    }, [id, auth, navigate]);
 
     const onLikeClick = () => {
         dataService.like(auth._id, id)
