@@ -14,7 +14,7 @@ export default function Footer() {
 
             <div className={styles['social-media-icons']}>
                 <a href="https://github.com/TodorYBorisov/Boats4U-App-React"><i className="fa-brands fa-square-github"></i></a>
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/todor-borisov-92378131/"><i className="fa-brands fa-linkedin"></i></a>
             </div>
         </footer >
     );
